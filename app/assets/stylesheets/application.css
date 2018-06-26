@@ -108,16 +108,42 @@
       font-size: 36px;
       margin-left: 50px;
   }
-  #cover{
-    height: 100vh;
 
+  .cover{
+    height: 100vh;
+    background-image: url("cover.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+  }
+
+  #description-text{
+    margin-top: 4vh;
+    margin-bottom: 4vh;
+    line-height: 1.3  ;
   }
 
   .button{
-  font-weight: 200;
-  background-color: #307FE2;
-  padding: 13px;
-  text-decoration: none;
-  color: white;
+    font-weight: 200;
+    background-color: #307FE2;
+    padding: 13px;
+    margin-top: 5vh;
+    text-decoration: none;
+    color: white;
 
-}
+  }
+
+  #button{
+    justify-content: flex-start;
+  }
+
+  #icon{
+    height: auto;
+    align-self: center;
+  }
+
+  #short-description{
+    margin-top: 10vh;
+    margin-bottom: 10vh;
+  }
