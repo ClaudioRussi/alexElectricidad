@@ -9,11 +9,26 @@
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
-  <body>
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
+  <body class="row">
+    <header id="header" class="col-xs-12">
+      <nav id="my-sidenav" class="sidenav">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+        <a href="#">INICIO</a>
+        <a href="#">SOBRE NOSOTROS</a>
+        <a href="#">SERVICIO</a>
+        <a href="#">NOTICIAS</a>
+        <a href="#">CONTACTO</a>
+      </nav>
+    </header>
 
     <%= yield %>
-    
+
+    <footer id="footer">
+      <section id ="phone-number">
+
+      </section>
+      <section id ="social-media">
+
+      </section>
+    </footer>
   </body>
-</html>
