@@ -114,7 +114,6 @@
     background-image: url("cover.jpg");
     background-size: cover;
     background-repeat: no-repeat;
-    background-attachment: fixed;
     background-position: center;
   }
 
@@ -146,4 +145,14 @@
   #short-description{
     margin-top: 10vh;
     margin-bottom: 10vh;
+  }
+
+  .logo-image{
+    height: 15vh;
+  }
+  #slide-arrow{
+    width: 6%;
+    position: absolute;
+    bottom: 5vh;
+    left: 47%;
   }

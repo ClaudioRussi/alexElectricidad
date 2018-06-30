@@ -1,0 +1,4 @@
+<%=@publications.each do |publ| %>
+  <%= publ.title %>
+  <%= image_tag publ.cover.url %>
+<%end %>
