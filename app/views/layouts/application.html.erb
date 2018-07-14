@@ -10,25 +10,36 @@
   </head>
 
   <body class="row">
-    <header id="header" class="col-s-12">
-      <nav id="my-sidenav" class="sidenav">
-        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-        <a href="#">INICIO</a>
-        <a href="#">SOBRE NOSOTROS</a>
-        <a href="#">SERVICIO</a>
-        <a href="#">NOTICIAS</a>
-        <a href="#">CONTACTO</a>
-      </nav>
-    </header>
-
+    <%if action_name == "home" %>
+      <%= render 'layouts/nav-menu'%>
+    <%else%>
+      <%=render 'layouts/nav-blue-menu' %>
+    <%end %>
     <%= yield %>
 
-    <footer id="footer">
-      <section id ="phone-number">
+    <footer id="footer" class="row">
+      <div id="phone-number" class="row col-s-12">
+        <!--Para el telefono necesita +598 porque es el
+        numero para llamar de cualquier parte del mundo a numeros de celular urugauyos-->
+        <div class="col-s-10">
+          <h2 id="phone-text"><a href="tel:+5981234567">¿Necesitas ayuda? Llama <b>1234567</b></a></h2>
+        </div>
+      </div>
+      <div id ="social-media" class ="row col-s-10">
+        <div class="col-s-9 footer-logo-wrapper"  >
+          <%=link_to image_tag('logoAlexAzul.png', {alt:'Logo de alex', class: 'footer-logo-image'}), :root%>
+          </br>
+          <%=link_to "LogIcon", :new_user_session%>
+        </div>
 
-      </section>
-      <section id ="social-media">
+        <div class="col-s-3 footer-social-wrapper">
+          <ul>
+            <li><a href="">Facebook</a></li>
+            <li><a href="">Twitter</a></li>
+            <li><a href="">Instagram</a></li>
+          </ul>
 
-      </section>
+        </div>
+      </div>
     </footer>
   </body>

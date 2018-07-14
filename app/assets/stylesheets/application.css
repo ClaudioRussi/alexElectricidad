@@ -16,7 +16,7 @@
  *{
      margin:0;
      padding: 0;
-     font-family: "Bahnschrift";
+     font-family: "Bahnschrift", sans-serif;
    }
 
   .responsive-container{
@@ -25,8 +25,11 @@
 
   .row{
     width: 100%;
+    display: -webkit-flex;
     display: flex;
+    -webkit-flex-wrap: wrap;
     flex-wrap: wrap;
+    -webkit-justify-content: center;
     justify-content: center;
   }
 
@@ -90,23 +93,59 @@
 
   .sidenav {
       height: 100%;
-      width: 0;
+      width: 100%;
+      display:none;
       position: fixed;
       z-index: 1;
       top: 0;
-      right: 0;
+      left: 0;
       background-color: #111;
       overflow-x: hidden;
-      transition: 0.5s;
-      padding-top: 60px;
+  }
+
+  .sidenav a{
+    font-weight: 200;
+    text-decoration: none;
+    font-size: 16px;
+    color: white;
+    display: block;
+    transition: 0.3s;
+  }
+  #nav-links a{
+    padding: 8px 8px 8px 0px;
+
+  }
+
+  .sidenav a:hover{
+    color: #f1f1f1;
   }
 
   .sidenav .closebtn {
-      position: absolute;
+      /*position:absolute;
       top: 0;
       right: 25px;
       font-size: 36px;
+      margin-left: 50px;*/
+      display: inline-block;
+      text-decoration: none;
+      padding: 0px;
+  }
+
+  #openbtn {
+      z-index: 1;
+      color: white;
+      text-decoration: none;
+      display: inline;
+      position: fixed;
+      top: 15px;
+      right: 33px;
+      font-size: 25px;
       margin-left: 50px;
+  }
+
+
+  #openbtn-hidden{
+    display: none
   }
 
   .cover{
@@ -118,8 +157,7 @@
   }
 
   #description-text{
-    margin-top: 4vh;
-    margin-bottom: 4vh;
+    margin-bottom: 2vh;
     line-height: 1.3  ;
   }
 
@@ -127,14 +165,11 @@
     font-weight: 200;
     background-color: #307FE2;
     padding: 13px;
-    margin-top: 5vh;
     text-decoration: none;
     color: white;
-
   }
 
   #button{
-    justify-content: flex-start;
   }
 
   #icon{
@@ -148,11 +183,319 @@
   }
 
   .logo-image{
-    height: 15vh;
+    width: 50vw;
+  }
+
+  .footer-logo-image{
+    height: 5vh;
   }
   #slide-arrow{
-    width: 6%;
+    width: 5%;
     position: absolute;
     bottom: 5vh;
-    left: 47%;
+    left: 47.5%;
   }
+
+  #phone-text{
+    font-weight: 400;
+    font-style: normal;
+    font-size: 1.3rem;
+  }
+  #phone-text a{
+    text-decoration: none;
+    color: inherit;
+  }
+  #phone-text a:visited{
+    text-decoration: none;
+    color:inherit;
+  }
+
+  #phone-number{
+    background-color: #E4E1E1;
+    text-align: center;
+    margin-top: 3vh;
+    margin-bottom: 3vh;
+    padding-top: 3vh;
+    padding-bottom: 3vh;
+  }
+
+  .burger-menu-logo{
+    height: 7vh;
+  }
+  #burger-menu-logo-wrapper{
+    margin-bottom: 10px;
+    align-items: flex-start;
+  }
+  #my-sidenav{
+    text-align: center;
+  }
+  #my-sidenav > div{
+    text-align: left;
+  }
+  .photo-slider-img{
+    position: relative;
+    width:100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  .cover-news-img-wrapper{
+    width: 100%;
+    height: 46.88vw;
+    overflow: hidden;
+  }
+  .photo-slider-img-wrapper{
+    width: 100%;
+    height: 56.25vw;
+    overflow: hidden;
+  }
+  .photo-slider-title-wrapper{
+    background-color: rgba(0,0,0,0.9);
+    color: white;
+  }
+
+  footer a{
+    text-decoration: none;
+    color: #307FE2;
+  }
+
+  .footer-social-wrapper{
+    text-align: right;
+  }
+  .footer-social-wrapper a{
+    text-decoration: none;
+  }
+  .footer-logo-wrapper{
+    text-align: left;
+  }
+  .footer-logo-wrapper a{
+    text-decoration: none;
+  }
+  #social-media ul{
+    list-style-type: none;
+  }
+
+  #social-media{
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    line-height: 1.5rem;
+  }
+
+  .social-icon{
+    height: 1rem;
+  }
+
+  .publ-container{
+    position: relative;
+  }
+
+  .publ-title{
+    text-decoration: none;
+    padding: 1.5rem;
+    width: 60%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    background-color: rgba(0, 0, 0, 0.9);
+    text-align: left;
+  }
+
+  .publ-title h1{
+    font-weight: 200;
+    font-size: 1rem;
+  }
+
+
+  .social-media-menu{
+    position: absolute;
+    left: 0;
+    bottom: 5vh;
+  }
+
+  .social-media-menu li{
+    display: inline;
+    width: 1rem;
+  }
+  .social-media-menu a{
+    display: inline;
+    padding-right: 2rem;
+  }
+
+  .title-wrapper{
+    font-weight: bold;
+    margin-bottom: 3vh;
+    text-align: left;
+    font-size: 1.5rem;
+  }
+
+  #blue-openbtn{
+    /*z-index: 1;
+    color:#307FE2;
+    text-decoration: none;
+    font-size: 25px;*/
+  }
+
+  .sidenav .blue-closebtn{
+    z-index: 1;
+    color:white;
+    text-decoration: none;
+    font-size: 36px;
+  }
+  .menu-icons{
+    text-align: left;
+    margin-top: 5vh;
+    margin-bottom: 3vh;
+    align-items: flex-start;
+  }
+  .publ-list-title-wrapper{
+    line-height: 1rem;
+    margin-top: 2vh;
+    margin-bottom: 8vh;
+    text-align: left;
+  }
+  .publ-list-title-wrapper a{
+    text-decoration: none;
+    color: black;
+  }
+  .publ-list-title{
+    font-weight: bold;
+  }
+
+  .publ-list-title-date{
+    font-size: 12px;
+  }
+  .services-body h2{
+    font-weight: bold;
+    margin-bottom: 1.5rem;
+    font-size: 1.25rem;
+  }
+  .services-body #button{
+    text-align: center;
+    margin-top: 2rem;
+  }
+
+  .services-body a{
+    font-weight: bold;
+  }
+
+
+  .content-wrapper{
+    padding-top: 7vh;
+    padding-bottom: 7vh;
+  }
+
+  .body-text{
+    font-weight: normal;
+    line-height: 25px;
+    font-size: 1.25rem;
+    margin-bottom: 2rem;
+  }
+
+  .button-wrapper{
+    justify-content: flex-start;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    text-align: center;
+  }
+
+
+
+
+  /*Slide show*/
+
+/* Slideshow container */
+.slideshow-container {
+  position: relative;
+  margin: auto;
+  box-sizing: border-box;
+}
+
+/* Hide the images by default */
+.mySlides {
+    display: none;
+}
+
+/* Next & previous buttons */
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  margin-top: -22px;
+  padding: 16px;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+}
+
+/* Position the "next button" to the right */
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+.prev{
+  left:0;
+  border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover, .next:hover {
+  background-color: rgba(0,0,0,0.8);
+}
+
+/* Caption text */
+.text {
+  color: #f2f2f2;
+  font-size: 15px;
+  padding: 8px 12px;
+  position: absolute;
+  bottom: 8px;
+  width: 100%;
+  text-align: center;
+}
+
+/* Number text (1/3 etc) */
+.numbertext {
+  color: #f2f2f2;
+  font-size: 12px;
+  padding: 8px 12px;
+  position: absolute;
+  top: 0;
+}
+
+/* The dots/bullets/indicators */
+.dot {
+  cursor: pointer;
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+
+.active, .dot:hover {
+  background-color: #717171;
+}
+
+/* Fading animation */
+.fade {
+  -webkit-animation-name: fade;
+  -webkit-animation-duration: 1.5s;
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@-webkit-keyframes fade {
+  from {opacity: .4}
+  to {opacity: 1}
+}
+
+@keyframes fade {
+  from {opacity: .4}
+  to {opacity: 1}
+}

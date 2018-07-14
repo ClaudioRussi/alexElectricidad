@@ -1,18 +1,42 @@
 <section class="row">
-  <section id="cover" class="cover col-s-12 row">
-    <section id="icon">
+  <div id="cover" class="cover col-s-12 row">
+    <div id="icon">
       <%=image_tag 'logoAlex.png', alt:'Logo de alex', class: 'logo-image' %>
-    </section>
-    <section id="arrow-cover">
+    </div>
+    <div id="arrow-cover">
       <%=image_tag 'arrow.gif', alt:'Indicador', id: 'slide-arrow' %>
-    </section>
-  </section>
-  <section id="short-description" class="col-s-12 row">
-    <div id="description-text" class="col-s-9"><p>ALEX ES UNA EMPRESA DEDICADA A LA ELECTRICIDAD EN GENERAL Y A LA INSTALACIÓN Y MANTENIMIENTO DE EQUIPOS DE AIRE ACONDICIONADO.</p></div>
-    <div id="button" class="col-s-9" ><%=link_to 'SABER MÁS', about_path , class: "button"%></div>
-  </section>
+    </div>
+  </div>
+  <div class="col-s-12 row content-wrapper">
+    <div class="col-s-10"><p class="body-text">ALEX es una empresa dedicada a la electricidad en general y a la instalación y mantenimiento de equipos de aire acondicionado.</p></div>
+    <div id="button" class="col-s-10 button-wrapper"><%=link_to 'SABER MÁS', about_path , class: "button"%></div>
+  </div>
 
-  <section id="news-slider">
+    <div class=" row slideshow-container">
+      <%@news.each do |publ| %>
+        <div class="row publ-container col-s-12 mySlides fade">
+          <div class="photo-slider-img-wrapper">
+            <div class="numbertext"><%="#{@news.index(publ)+1}/#{@news.size}"%></div>
+            <%=link_to image_tag(publ.cover.url, {class:"photo-slider-img"}), publication_path(publ) %>
+            <%= link_to publication_path(publ), class: "publ-title" do%>
+              <div>
+                <p><%=publ.title.upcase%></p>
+              </div>
+            <%end%>
+          </div>
 
-  </section>
+        </div>
+      <%end%>
+            <!-- Next and previous buttons -->
+      <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+      <a class="next" onclick="plusSlides(1)">&#10095;</a>
+    </div>
+    <br>
+    <div style="text-align:center">
+      <%@news.each do |publ|%>
+      <span class="dot" onclick="currentSlide(<%=@news.index(publ)+1%>)"></span>
+      <%end%>
+    </div>
 </section>
+
+<script type="text/JavaScript"> </script>

@@ -14,13 +14,17 @@
 //= require activestorage
 //= require turbolinks
 //= require_tree .
+
+
+//functions called by burger-menu
 function openNav() {
-    document.getElementById("mySidenav").style.width = "100%";
-    document.getElementById("mySidenav").style.backgroundColor = "rgba(17,17,17,0.9)";
-}
+    var e = document.getElementById("my-sidenav");
+    e.style.display = "block";
+    e.style.backgroundColor = "rgba(17,17,17,0.9)";
+    document.getElementById('menu-icons').style.visibility = 'hidden';
+  };
 
 function closeNav() {
-    document.getElementById("mySidenav").style.width = "0";
-    document.getElementById("main").style.marginLeft= "0";
-    document.body.style.backgroundColor = "white";
-}
+    document.getElementById("my-sidenav").style.display = "none";
+    document.getElementById('menu-icons').style.visibility='visible';
+};

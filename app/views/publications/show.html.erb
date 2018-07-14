@@ -1,4 +1,9 @@
-<%=image_tag @publication.cover.url%>
-  <legend><%=@publication.cover.url%></legend>
-<h1><%=@publication.title %></h1>
-<p><%=@publication.body%></p>
+<article class="row">
+  <div class="col-s-12 photo-slider-img-wrapper publ-container">
+    <%=image_tag @publication.cover.url, {class:'photo-slider-img', alt:'Portada de la publicación'}%>
+    <div class="publ-title"><h1><%=@publication.title.upcase %></h1></div>
+  </div>
+  <div class="col-s-10 content-wrapper ">
+    <p class="body-text"><%=@publication.body%></p>
+  </div>
+</article>
