@@ -13,7 +13,10 @@ class CoverUploader < CarrierWave::Uploader::Base
   #def store_dir
   #  "uploads/#{model.class.to_s.underscore}/#{mounted_as}/#{model.id}"
   #end
-
+  def cache_dir
+    "#{Rails.root}/tmp/uploads"
+  end
+  
   version :cover do
     process :eager => true
     process :resize_to_fill => [1366,768, :north]
