@@ -1,7 +1,8 @@
 class PublicationsController < ApplicationController
+  before_action :authenticate_user!, only:[:edit, :update, :delete, :new, :create]
 
   def index
-    @publications = Publication.all
+    @publications = Publication.all.order('created_at DESC')
   end
 
   def new
@@ -9,9 +10,9 @@ class PublicationsController < ApplicationController
   end
 
   def create
-    publication = Publication.new(publication_params)
-    if(publication.save)
-      redirect_to publication
+    @publication = Publication.new(publication_params)
+    if(@publication.save)
+      redirect_to @publication
     else
       render 'new'
     end
@@ -26,10 +27,19 @@ class PublicationsController < ApplicationController
   end
 
   def update
+    @publication = Publication.find(params[:id])
+    if(@publication.update_attributes(publication_params))
+      flash[:notice] = "Publicacion editada correctamente"
+      redirect_to @publication
+    else
+      render 'edit'
+    end
   end
 
-  def delete
-
+  def destroy
+    publication = Publication.find(params[:id])
+    publication.destroy
+    redirect_to publications_path
   end
 
   def publication_params

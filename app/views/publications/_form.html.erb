@@ -1,8 +1,7 @@
-<%= form_for(publication) do |f| %>
+<%= form_for(publication, html:{class:'row login-form'}) do |f| %>
   <% if publication.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(publication.errors.count, "error") %> prohibited this user from being saved:</h2>
-
+    <div id="error_explanation" class="alert col-s-10 col-md-11">
+      <h2><%= publication.errors.count %> error/es evitaron crear la publicación:</h2>
       <ul>
       <% publication.errors.full_messages.each do |message| %>
         <li><%= message %></li>
@@ -10,19 +9,29 @@
       </ul>
     </div>
   <% end %>
+  <div class="row  col-md-11">
+    <div class="field col-s-10 col-md-7">
+      <%= f.label :titulo %><br>
+      <%= f.text_field   :title , class: 'register-field col-s-12 col-md-12'%>
+    </div>
+    <div class="field col-s-10 col-md-7">
+      <label>Portada</label>
+      <div class="row col-s-12 col-md-12">
+        <label class="button col-s-12 col-md-12" style="cursor: pointer;">
+          AGREGAR PORTADA
+          <%= f.file_field :cover, style: 'display: none;'%>
+        </label>
+      </div>
+    </div>
 
-  <div class="field">
-    <%= f.label :titulo %>
-    <%= f.text_field :title %>
-  </div>
-  <legend>Portada</legend>
-  <%= f.file_field :cover %>
-  <div class="field">
-    <%= f.label :cuerpo %>
-    <%= f.text_field :body %>
+    <div class="field col-s-10 col-md-7">
+      <%= f.label :cuerpo %>
+      <%= f.text_area :body, class: 'register-field col-s-12 col-md-12', style: 'height:50vh;' %>
+    </div>
+
+    <div class="actions col-s-10 col-md-7">
+      <%= f.submit 'CONTINUAR', class:'admin-button'  %>
+    </div>
   </div>
 
-  <div class="actions">
-    <%= f.submit %>
-  </div>
 <% end %>

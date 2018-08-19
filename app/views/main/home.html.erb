@@ -1,3 +1,4 @@
+<%@title = "Inicio"%>
 <section class="row">
   <div id="cover" class="cover col-s-12 row">
     <div id="icon">
@@ -7,14 +8,22 @@
       <%=image_tag 'arrow.gif', alt:'Indicador', id: 'slide-arrow' %>
     </div>
   </div>
-  <div class="col-s-12 row content-wrapper">
-    <div class="col-s-10"><p class="body-text">ALEX es una empresa dedicada a la electricidad en general y a la instalación y mantenimiento de equipos de aire acondicionado.</p></div>
-    <div id="button" class="col-s-10 button-wrapper"><%=link_to 'SABER MÁS', about_path , class: "button"%></div>
+  <div class="button-call-desktop">
+    <%=link_to "Llamar", contact_path, class: 'admin-button' %>
+  </div>
+  <div class="button-call-mobile row col-s-11">
+    <a href="tel:+59895938342" class="admin-button col-s-3">Llamar</a>
+  </div>
+  <hr class="separador-desktop">
+  <div class="col-s-12 col-md-12 row content-wrapper content-wrapper-desktop">
+    <div class="col-s-10 col-md-11"><p class="home-text">Alex es una empresa dedicada a la electricidad en general y a la instalación, reparación y mantenimiento de equipos de aire acondicionado.</p></div>
+    <div id="button" class="col-s-10 col-md-11 button-wrapper"><%=link_to 'SABER MÁS', about_path , class: "button"%></div>
+
   </div>
 
     <div class=" row slideshow-container">
       <%@news.each do |publ| %>
-        <div class="row publ-container col-s-12 mySlides fade">
+        <div class="row publ-container col-s-12 col-md-12 mySlides fade">
           <div class="photo-slider-img-wrapper">
             <div class="numbertext"><%="#{@news.index(publ)+1}/#{@news.size}"%></div>
             <%=link_to image_tag(publ.cover.url, {class:"photo-slider-img"}), publication_path(publ) %>
@@ -32,11 +41,13 @@
       <a class="next" onclick="plusSlides(1)">&#10095;</a>
     </div>
     <br>
-    <div style="text-align:center">
+    <div style="text-align:center; background-color: #307FE2; item-align:center" class="row col-s-12 col-md-12">
       <%@news.each do |publ|%>
       <span class="dot" onclick="currentSlide(<%=@news.index(publ)+1%>)"></span>
       <%end%>
     </div>
 </section>
 
-<script type="text/JavaScript"> </script>
+<script type="text/JavaScript">
+  showSlides(1);
+</script>

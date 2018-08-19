@@ -68,7 +68,27 @@ Rails.application.configure do
 
 
   #configurar para que funcione devise
+  #poner direccion de aplicacion heroku cuando creemos cuenta
   #config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
+
+  #Si al mandar correo me sale un error que dice "TEmplate error: missing host to link to" usar la siguiente linea
+  #Rails.application.routes.default_url_options[:host] = 'yoursite.herokuapp.com' #aca poner la ruta de la app
+
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.perform_deliveries = true
+  config.action_mailer.raise_delivery_errors = false
+  config.action_mailer.default :charset => "utf-8"
+  config.action_mailer.default_options = {from: ENV["GMAIL_USERNAME"]}
+  config.action_mailer.smtp_settings = {
+    address: "smtp.gmail.com",
+    port: 587,
+    domain: ENV["GMAIL_DOMAIN"],
+    authentication: "plain",
+    enable_starttls_auto: true,
+    user_name: ENV["GMAIL_USERNAME"],
+    password: ENV["GMAIL_PASSWORD"]
+  }
+
 
 
 

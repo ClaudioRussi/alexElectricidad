@@ -3,12 +3,12 @@
 class Users::RegistrationsController < Devise::RegistrationsController
   # before_action :configure_sign_up_params, only: [:create]
   # before_action :configure_account_update_params, only: [:update]
-
+   prepend_before_action :require_no_authentication, only: :cancel
+   before_action :authenticate_user!
   # GET /resource/sign_up
   # def new
   #   super
   # end
-
   # POST /resource
   # def create
   #   super
@@ -59,4 +59,9 @@ class Users::RegistrationsController < Devise::RegistrationsController
   # def after_inactive_sign_up_path_for(resource)
   #   super(resource)
   # end
+  #def authenticate_user!(current_user)
+  #  if(!user_signed_in?)
+  #    redirect_to :new_user_session
+  #  end
+  #end
 end

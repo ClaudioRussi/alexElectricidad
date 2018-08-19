@@ -1,13 +1,29 @@
-<article class="row">
-  <div class="photo-slider-img-wrapper">
+<%@title = "Contacto"%>
+<article class="row desktop-wrapper">
+  <div class="photo-slider-img-wrapper mobile-contact-cover">
     <%=image_tag "Imagen-noticia.jpg", alt: "imagen alex", class: "photo-slider-img"%>
   </div>
-  <div class="col-s-10">
-    <div class="content-wrapper services-body">
-      <h2>INFORMACIÓN DE CONTACTO</h2>
-      <p class="body-text">Calle Principal 1234
-        <br> Barrio, Montevideo, Uruguay</p></br>
-      <p class="body-text">E-mail: info@alex.com.uy</p>
+  <div class="col-s-10 col-md-11">
+    <div class="title-wrapper" style="margin-top:6vh;">
+      <hr class="separador-desktop">
+      <h1>Contacto</h1>
+      <hr class="separador-mobile">
+    </div>
+    <div class="content-wrapper cold-md-11 row">
+      <div class="col-md-6 desktop-contact-img">
+        <div class=" services-img-wrapper">
+            <%=image_tag "contacto.png", alt: "imagen alex", class: "photo-slider-img"%>
+        </div>
+      </div>
+      <div class="col-md-1"><!--separador--></div>
+      <div class="col-md-5 col-s-12">
+        <p class="body-text">Celular: 095938342</p>
+        <p class="body-text">Telefono: 23119708</p>
+        <p class="body-text">E-mail: airealexmontevideo@gmail.com</p>
+        <p class="body-text contact-links"><a href="https://www.facebook.com/aireacondicionadouruguay/">Facebook</a></p>
+        <p class="body-text contact-links"><a href="https://twitter.com/airealex1">Twitter</a></p>
+        <p class="body-text contact-links"><a href="https://www.instagram.com/aireacondicionadoalex/">Instagram</a></p>
+      </div>
     </div>
   </div>
 </article>

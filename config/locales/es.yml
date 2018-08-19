@@ -29,5 +29,19 @@
 # To learn more, please read the Rails Internationalization guide
 # available at http://guides.rubyonrails.org/i18n.html.
 
-en:
-  hello: "Hello world"
+es:
+  errors:
+    format: "%{message}"
+  activerecord:
+    errors:
+      messages:
+        confirmation: "La contraseña y la confimación no coinciden."
+      models:
+        user:
+          attributes:
+            email:
+              blank: "El Email no puede estar vacío."
+            password:
+              blank: "La contraseña no puede estar vacía."
+              too_short: "Contraseña demasiado corta (%{count} carácteres mínimo)."
+              too_long: "Contraseña demasiado larga (%{count} carácteres máximo)."

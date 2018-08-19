@@ -1,6 +1,6 @@
 class MainController < ApplicationController
   def home
-    @news = Publication.last(5);
+    @news = Publication.order('created_at DESC').first(5)
   end
 
   def about

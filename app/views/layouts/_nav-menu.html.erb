@@ -1,34 +1,85 @@
-<header id="header">
+<header id="header-mobile">
   <a href="javascript:void(0)" id="openbtn" onclick="openNav()">&#9776;</a>
-  <div id="my-sidenav" class="sidenav">
-    <div id="burger-menu-logo-wrapper" class="row">
-      <div class="col-s-11">
-        <%=link_to image_tag('logoAlex.png', {alt:'Logo de alex', class: 'burger-menu-logo'}), :root%>
-      </div>
-      <div class="col-s-1">
-        <a href="javascript:void(0)" class="closebtn" onclick="closeNav();">&times;</a>
+
+  <div id="my-sidenav" class="row sidenav">
+    <div class="row menu-icons">
+      <div class="row col-s-10 ">
+        <div class="col-s-11">
+          <%=link_to image_tag('logoAlex.png', {alt:'Logo de alex', class: 'burger-menu-logo'}), :root%>
+        </div>
+        <div class="col-s-1 burger-button">
+          <a href="javascript:void(0)" class="closebtn" onclick="closeNav();"><%=image_tag "cancel-cross.png", alt:"Cerrar menú", class:"social-icon"%></a>
+        </div>
       </div>
     </div>
 
-    <div class="col-s-12">
-      <%=link_to "INICIO", root_path%>
-      <%=link_to "SERVICIOS", services_path%>
-      <%=link_to "SOBRE NOSOTROS", about_path%>
-      <%=link_to "NOTICIAS", publications_path%>
-      <%=link_to "CONTACTO", contact_path%>
+    <div id="nav-links" class="row">
+      <div class="col-s-10">
+        <%=link_to "INICIO", root_path%>
+        <%=link_to "SERVICIOS", services_path%>
+        <%=link_to "SOBRE NOSOTROS", about_path%>
+        <%=link_to "NOTICIAS", publications_path%>
+        <%=link_to "CONTACTO", contact_path%>
+        <%if user_signed_in?%>
+        <%=link_to "REGISTRAR USUARIO", new_user_registration_path%>
+        <%=link_to "PUBLICAR", new_publication_path%>
+        <%=link_to "CUENTA", edit_user_registration_path%>
+        <%=link_to "CERRAR SESIÓN", destroy_user_session_path, method: 'delete'%>
+        <%end%>
+      </div>
     </div>
-    <div class="col-s-12 social-media-menu">
-      <ul>
-        <li>
-          <%= link_to image_tag('facebook-logo.png',{alt:'Enlace a Facebook', class:'social-icon'})%>
-        </li>
-        <li>
-          <%= link_to image_tag('twitter-logo.png',{alt:'Enlace a Twitter', class:'social-icon'})%>
-        </li>
-        <li>
-          <%= link_to image_tag('instagram-logo.png',{alt:'Enlace a Instagram', class:'social-icon'})%>
-        </li>
-      </ul>
+  <!--  <div class="row">
+      <div class="">
+        <a href="facebook.com"><%=image_tag 'facebook-logo.png', alt:'Enlace a Facebook', class:'social-icon'%></a>
+      </div>
+    </div>-->
+    <div class="row social-media-menu">
+      <div class=" col-s-10">
+        <div class="col-s-11">
+          <ul>
+            <li>
+              <%= link_to image_tag('facebook-logo.png',{alt:'Enlace a Facebook', class:'social-icon'}), "https://www.facebook.com/aireacondicionadouruguay/"%>
+            </li>
+            <li>
+              <%= link_to image_tag('twitter-logo.png',{alt:'Enlace a Twitter', class:'social-icon'}), "https://twitter.com/airealex1"%>
+            </li>
+            <li>
+              <%= link_to image_tag('instagram-logo.png',{alt:'Enlace a Instagram', class:'social-icon'}), "https://www.instagram.com/aireacondicionadoalex/"%>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</header>
+
+<header id="header-desktop" class="row">
+  <div class="sidenav-desktop row">
+    <div class="col-md-11 row">
+      <div class="col-md-1">
+            <%=link_to image_tag('logoAlex.png', {alt:'Logo de alex', class: 'logo-image'}), :root %>
+      </div>
+
+      <div class="col-md-11 nav-links">
+        <ul>
+          <%if user_signed_in? %>
+          <div class="dropdown">
+            <%= link_to "USUARIO", edit_user_registration_path, class:"dropbtn" %>
+            <div class="dropdown-content">
+              <%=link_to "REGISTRAR USUARIO", new_user_registration_path%>
+              <%=link_to "PUBLICAR", new_publication_path%>
+              <%=link_to "CUENTA", edit_user_registration_path%>
+              <%=link_to "CERRAR SESIÓN", destroy_user_session_path, method: 'delete'%>
+            </div>
+          </div>
+          <%end%>
+          <li><%=link_to "SERVICIOS", services_path%></li>
+          <li><%=link_to "SOBRE NOSOTROS", about_path%></li>
+          <li><%=link_to "NOTICIAS", publications_path%></li>
+          <li><%=link_to "CONTACTO", contact_path%></li>
+        </ul>
+      </div>
     </div>
   </div>
 </header>

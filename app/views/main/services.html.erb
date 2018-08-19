@@ -1,36 +1,60 @@
-<article class="row">
-
-  <div class="title-wrapper col-s-10">
+<%@title = "Servicios"%>
+<article class="desktop-wrapper content-wrapper row">
+  <div class="title-wrapper col-s-10 col-md-11">
+    <hr class="separador-desktop">
     <h1>Servicios</h1>
-    <hr style="margin-top: 6vh; margin-bottom: 2vh;">
+    <hr class="separador-mobile">
   </div>
 
-  <div class="col-s-10 row">
-      <div class="cover-news-img-wrapper">
-        <%=image_tag("Imagen-noticia.jpg", class:"photo-slider-img")%>
-      </div>
-      <div class="content-wrapper services-body">
-        <h2>AIRE ACONDICIONADO</h2>
-        <div>
-          <p class="body-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+  <div class="col-s-10 col-md-11 row service-items">
+    <div class="col-md-6 col-s-12 row">
+        <div class="services-img-wrapper">
+          <%=image_tag("aire.png", class:"photo-slider-img")%>
         </div>
-        <div class="button-wrapper">
-          <a href="#" class="button">LLAMAR</a>
-        </div>
+    </div>
+    <div class="col-md-1"><!--separador--></div>
+    <div class="content-wrapper services-body col-md-5">
+      <h2>AIRE ACONDICIONADO</h2>
+      <div>
+        <p class="body-text">Realizamos instalación, mantenimiento y reparación de equipos de aire acondicionado. La instalación es con bomba de vacio, como recomienda el fabricante.</p>
       </div>
+      <div class="button-wrapper">
+        <a href="tel:+59895938342" class="button">LLAMAR</a>
+      </div>
+    </div>
+    <hr class="separador-desktop col-md-12">
+    <div class="col-md-6 col-s-12 row">
+      <div class="services-img-wrapper">
+        <%=image_tag("electricidad.png", class:"photo-slider-img")%>
+      </div>
+    </div>
+    <div class="col-md-1"><!--separador--></div>
+    <div class="content-wrapper services-body col-md-5">
+      <h2>ELECTRICIDAD</h2>
+      <div>
+        <p class="body-text">Ofrecemos un servicio profesional, bajo la firma autorizada por UTE. Realizamos instalaciones completas. Trabajamos con megómetro, para la localización de fugas. Reciclaje de tableros eléctricos y más.</p>
+      </div>
+      <div class="button-wrapper">
+        <a href="tel:+59895938342" class="button">LLAMAR</a>
+      </div>
+    </div>
 
-      <div class="cover-news-img-wrapper">
+    <hr class="separador-desktop col-md-12">
+    <div class="col-md-6 col-s-12 row">
+      <div class="services-img-wrapper">
         <%=image_tag("Imagen-noticia.jpg", class:"photo-slider-img")%>
       </div>
-      <div class="content-wrapper services-body">
-        <h2>ELECTRICIDAD</h2>
-        <div>
-          <p class="body-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-        </div>
-        <div class="button-wrapper">
-          <a href="#" class="button">LLAMAR</a>
-        </div>
+    </div>
+    <div class="col-md-1"><!--separador--></div>
+    <div class="content-wrapper services-body col-md-5">
+      <h2>VENTA DE EQUIPOS</h2>
+      <div>
+        <p class="body-text">Tenemos a la venta equipos de aire acondicionado Gree con 1 año de garantía. <br> Estos equipos tienen categoría energética A y utiliza gases ecológicos, lo que conlleva a un bajo consumo enérgetico.</p>
       </div>
+      <div class="button-wrapper">
+        <a href="tel:+59895938342" class="button">LLAMAR</a>
+      </div>
+    </div>
   </div>
 
 </article>

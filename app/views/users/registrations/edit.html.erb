@@ -1,43 +1,50 @@
-<h2>Edit <%= resource_name.to_s.humanize %></h2>
+<%@title = "Editar usuario"%>
+<section class="row content-wrapper desktop-wrapper">
 
-<%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
-  <%= devise_error_messages! %>
-
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+  <div class="title-wrapper col-s-10 col-md-11">
+    <hr class="separador-desktop">
+    <h1>Editar usuario</h1>
+    <hr class="separador-mobile">
   </div>
 
-  <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
-    <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
-  <% end %>
+  <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put, class:'row login-form' }) do |f| %>
+    <%= devise_error_messages! %>
+    <div class="row col-md-11">
+      <div class="field col-s-10 col-md-7">
+        <%= f.label :email %><br />
+        <%= f.email_field :email, autofocus: true, autocomplete: "email", class:"register-field col-s-12 col-md-12" %>
+      </div>
 
-  <div class="field">
-    <%= f.label :password %> <i>(leave blank if you don't want to change it)</i><br />
-    <%= f.password_field :password, autocomplete: "off" %>
-    <% if @minimum_password_length %>
-      <br />
-      <em><%= @minimum_password_length %> characters minimum</em>
+      <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
+        <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
+      <% end %>
+
+      <div class="field col-s-10 col-md-7">
+          <%= f.label "Contraseña" %> <i>(Dejar en blanco si no desea cambiarla.)</i><br />
+          <%= f.password_field :password, autocomplete: "off", class:"register-field col-s-12 col-md-12" %>
+          <% if @minimum_password_length %>
+            <br />
+            <em><%= @minimum_password_length %> characters minimum</em>
+          <% end %>
+        </div>
+
+        <div class="field col-s-10 col-md-7">
+          <%= f.label "Confirmar contraseña" %><br />
+          <%= f.password_field :password_confirmation, autocomplete: "off", class:"register-field col-s-12 col-md-12" %>
+        </div>
+
+        <div class="field col-s-10 col-md-7">
+          <%= f.label "Contraseña actual" %><i>(Necesaria para confirmar los cambios.)</i><br />
+          <%= f.password_field :current_password, autocomplete: "off", class:"register-field col-s-12 col-md-12" %>
+        </div>
+
+        <div class="actions col-s-10 col-md-7">
+          <%= f.submit "Actualizar", class:"admin-button", style:"margin-bottom: 1rem;"%>
+          <%= button_to "Eliminar cuenta", registration_path(resource_name), data: { confirm: "¿Estás seguro?" }, method: :delete, class:"admin-button" %>
+        </div>
+      </div>
     <% end %>
-  </div>
 
-  <div class="field">
-    <%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "off" %>
-  </div>
 
-  <div class="field">
-    <%= f.label :current_password %> <i>(we need your current password to confirm your changes)</i><br />
-    <%= f.password_field :current_password, autocomplete: "off" %>
-  </div>
 
-  <div class="actions">
-    <%= f.submit "Update" %>
-  </div>
-<% end %>
-
-<h3>Cancel my account</h3>
-
-<p>Unhappy? <%= button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %></p>
-
-<%= link_to "Back", :back %>
+</section>

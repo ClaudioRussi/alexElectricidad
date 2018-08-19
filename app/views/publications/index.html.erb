@@ -1,23 +1,27 @@
-<section class="content-wrapper row">
-  <div class="title-wrapper col-s-10">
-    <h1>Últimas Noticias</h1>
-    <hr style="margin-top: 6vh; margin-bottom: 2vh;">
+<%@title = "Noticias"%>
+<section class=" desktop-wrapper content-wrapper row">
+  <div class="title-wrapper col-s-10 col-md-11">
+    <hr class="separador-desktop">
+    <h1>Noticias</h1>
+    <hr class="separador-mobile">
   </div>
 
-  <div class="row">
+  <div class="row col-md-11 publications">
     <%@publications.each do |publ| %>
-    <div class="col-s-10">
-      <p class="publ-list-title-date"><%= publ.created_at.strftime("%d/%m/%Y") %></p>
-    </div>
-    <div class="row publ-container col-s-10">
-      <div class="cover-news-img-wrapper">
-        <%= link_to image_tag(publ.cover.url, {class: "photo-slider-img"}), publication_path(publ)%>
+      <div class="row col-md-5 publication">
+        <div class="col-s-10 col-md-12">
+          <p class="publ-list-title-date"><%= publ.created_at.strftime("%d/%m/%Y") %></p>
+        </div>
+        <div class="row publ-container col-s-10 col-md-12">
+          <div class="cover-news-img-wrapper">
+            <%= link_to image_tag(publ.cover.url, {class: "photo-slider-img"}), publication_path(publ)%>
+          </div>
+        </div>
+        <div class="publ-list-title-wrapper col-s-10 col-md-12">
+          <p class="publ-list-title"><%=link_to publ.title.capitalize, publication_path(publ)%> <%=image_tag "link-arrow.png", alt: "link", class: "social-icon"%></p>
+        </div>
       </div>
-    </div>
-      <div class="publ-list-title-wrapper col-s-10">
-        <p class="publ-list-title"><%=link_to publ.title.capitalize, publication_path(publ)%> <%=image_tag "link-arrow.png", alt: "link", class: "social-icon"%></p>
-      </div>
-    <%end %>
+    <%end%>
   </div>
 
 </section>

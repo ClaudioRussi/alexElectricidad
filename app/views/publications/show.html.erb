@@ -1,9 +1,33 @@
-<article class="row">
-  <div class="col-s-12 photo-slider-img-wrapper publ-container">
+<%@title = @publication.title%>
+<article class="row desktop-wrapper">
+  <div class="col-s-12 photo-slider-img-wrapper publ-container mobile-contact-cover">
     <%=image_tag @publication.cover.url, {class:'photo-slider-img', alt:'Portada de la publicación'}%>
     <div class="publ-title"><h1><%=@publication.title.upcase %></h1></div>
   </div>
-  <div class="col-s-10 content-wrapper ">
-    <p class="body-text"><%=@publication.body%></p>
+
+  <div class="col-md-11">
+    <hr class="separador-desktop">
   </div>
+
+  <div class="row col-md-11  content-wrapper">
+    <div class="desktop-contact-img col-md-6">
+      <div class=" services-img-wrapper">
+        <%=image_tag @publication.cover.url, {class:'photo-slider-img', alt:'Portada de la publicación'}%>
+      </div>
+    </div>
+    <div class="col-md-1"><!--Separador--></div>
+    <div class="col-s-10 col-md-5 ">
+      <h1 class="desktop-publ-title"><%=@publication.title%></h1> <br>
+      <p class="body-text"><%=@publication.body%></p>
+    </div>
+    <div class="actions row col-md-11 col-s-12" style="margin-top: 5rem;">
+      <%if user_signed_in?%>
+        <%=link_to 'Editar publicación', edit_publication_path(@publication), class:"admin-button col-md-5"%>
+        <div class="col-md-2"> <!--Separador--></div>
+        <%=link_to 'Eliminar publicación', @publication, data: { confirm: "¿Estás seguro?" }, method: :delete, class:"admin-button col-md-5"%>
+      <%end%>
+    </div>
+  </div>
+
+
 </article>

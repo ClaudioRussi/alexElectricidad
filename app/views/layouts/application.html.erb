@@ -1,7 +1,11 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Alex</title>
+    <title>Alex | <%=@title%></title>
+    <meta name="description" content="Alex es una empresa de instalacion y venta de aire acondicionado e instalaciones electricas con mas de .. años de experiencia.">
+    <meta name="keywords" content="Electricidad,Electricista,Montevideo,Uruguay,Corriente,Aire,Acondicionado,Frio,Calor,Alex,Alexander">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <%=favicon_link_tag 'logoCuadrado.png'%>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
@@ -18,25 +22,26 @@
     <%= yield %>
 
     <footer id="footer" class="row">
-      <div id="phone-number" class="row col-s-12">
-        <!--Para el telefono necesita +598 porque es el
-        numero para llamar de cualquier parte del mundo a numeros de celular urugauyos-->
-        <div class="col-s-10">
-          <h2 id="phone-text"><a href="tel:+5981234567">¿Necesitas ayuda? Llama <b>1234567</b></a></h2>
-        </div>
+      <div class="col-s-12 col-md-12">
+        <hr class="separador-footer">
       </div>
-      <div id ="social-media" class ="row col-s-10">
+      <div id ="social-media" class ="row col-s-10 col-md-11">
         <div class="col-s-9 footer-logo-wrapper"  >
           <%=link_to image_tag('logoAlexAzul.png', {alt:'Logo de alex', class: 'footer-logo-image'}), :root%>
           </br>
-          <%=link_to "LogIcon", :new_user_session%>
+          <%=link_to image_tag('user.png', {alt:'Ingresar', class:'social-icon'}), :new_user_session%>
         </div>
 
-        <div class="col-s-3 footer-social-wrapper">
+        <div class="col-md-6 mail-footer">
+          <p><span><%=link_to image_tag('user.png', {alt:'Ingresar', class:'social-icon'}), :new_user_session%></span>    airealexmontevideo@gmail.com</p>
+
+        </div>
+
+        <div class="col-s-3 col-md-6 footer-social-wrapper">
           <ul>
-            <li><a href="">Facebook</a></li>
-            <li><a href="">Twitter</a></li>
-            <li><a href="">Instagram</a></li>
+            <li><a href="https://www.facebook.com/aireacondicionadouruguay/">Facebook</a></li>
+            <li><a href="https://twitter.com/airealex1">Twitter</a></li>
+            <li><a href="https://www.instagram.com/aireacondicionadoalex/">Instagram</a></li>
           </ul>
 
         </div>
