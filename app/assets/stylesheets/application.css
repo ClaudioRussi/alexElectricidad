@@ -519,7 +519,7 @@ text-field:-webkit-autofill, input:-webkit-autofill{
 
     .cover{
       height: 100vh;
-      background-image: url("cover.png");
+      background-image: image-url("cover.png");
       background-size: cover;
       background-repeat: no-repeat;
       background-position: center;
@@ -650,7 +650,7 @@ text-field:-webkit-autofill, input:-webkit-autofill{
 
   .cover{
     height: 100vh;
-    background-image: url("portada.png");
+    background-image: image-url("portada.png");
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
